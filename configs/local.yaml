@@ -1,0 +1,16 @@
+server:
+    port: 8002
+    mode: dev
+log:
+    log_level: debug
+    file_name: "./logs/dev.001.log"
+    max_size: 500
+    max_backups: 3
+    max_age: 28
+    compress: true
+smtp:
+    host: "email-smtp.*******.amazonaws.com"
+    port: 587
+    from: "from@example.com"
+    username: "*****************"
+    password: "*****************"
