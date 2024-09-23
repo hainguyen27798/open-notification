@@ -1,2 +1,5 @@
 run:
-	MODE=dev go run ./cmd/server/main.go
+	MODE=dev air
+
+wire:
+	cd internal/wires && wire

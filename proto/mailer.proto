@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "./;proto";
+
+service Mailer {
+    rpc SendSMTP(SendSMTPRequest) returns (SendSMTPResponse);
+}
+
+message SendSMTPRequest {
+    string templateName = 10101;
+    string subject = 10102;
+    repeated string to = 10103;
+    map<string, string> data = 10104;
+}
+
+message SendSMTPResponse {
+    int32 code = 20101;
+    string message = 20102;
+}

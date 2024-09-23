@@ -9,7 +9,7 @@ import (
 )
 
 type IMailService interface {
-	SendSTMP(templateName string, subject string, to []string, data map[string]interface{}) error
+	SendSTMP(templateName string, subject string, to []string, data map[string]string) error
 }
 
 type mailService struct{}
@@ -18,7 +18,7 @@ func NewMailService() IMailService {
 	return &mailService{}
 }
 
-func (ms *mailService) SendSTMP(templateName string, subject string, to []string, data map[string]interface{}) error {
+func (ms *mailService) SendSTMP(templateName string, subject string, to []string, data map[string]string) error {
 	body, err := utils.GetEmailTemplate(templateName, data)
 	from := global.Config.SMTP.From
 	SMTPHost := global.Config.SMTP.Host

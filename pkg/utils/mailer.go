@@ -30,7 +30,7 @@ func BuildMessage(mail Mail) string {
 	return msg
 }
 
-func GetEmailTemplate(name string, data map[string]interface{}) (string, error) {
+func GetEmailTemplate(name string, data map[string]string) (string, error) {
 	htmlTemplate := new(bytes.Buffer)
 	t := template.Must(template.ParseFiles(fmt.Sprintf("templates/%s.html", name)))
 	err := t.Execute(htmlTemplate, data)
