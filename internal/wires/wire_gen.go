@@ -7,9 +7,18 @@
 package wires
 
 import (
+	"github.com/hainguyen27798/open-notification/internal/consumers"
 	"github.com/hainguyen27798/open-notification/internal/controllers"
 	"github.com/hainguyen27798/open-notification/internal/services"
 )
+
+// Injectors from mail_consumer_wire.go:
+
+func InitMailerConsumer() (*consumers.MailerConsumer, error) {
+	iMailService := services.NewMailService()
+	mailerConsumer := consumers.NewMailerConsumer(iMailService)
+	return mailerConsumer, nil
+}
 
 // Injectors from mail_wire.go:
 

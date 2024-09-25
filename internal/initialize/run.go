@@ -13,6 +13,7 @@ func Run() {
 	LoadConfig()
 	InitLogger()
 	SetupFirestore()
+	InitKafka()
 
 	s := grpc.NewServer()
 	RegisterGrpc(s)
