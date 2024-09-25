@@ -4,6 +4,7 @@ type Config struct {
 	Server ServerSettings `mapstructure:"server"`
 	Logger LoggerSettings `mapstructure:"log"`
 	SMTP   SMTPSettings   `mapstructure:"smtp"`
+	Kafka  KafkaSettings  `mapstructure:"kafka"`
 }
 
 type ServerSettings struct {
@@ -17,6 +18,10 @@ type SMTPSettings struct {
 	From     string `mapstructure:"from"`
 	Username string `mapstructure:"username"`
 	Password string `mapstructure:"password"`
+}
+
+type KafkaSettings struct {
+	Broker string `mapstructure:"broker"`
 }
 
 type LoggerSettings struct {
