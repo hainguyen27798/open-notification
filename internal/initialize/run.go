@@ -12,6 +12,7 @@ import (
 func Run() {
 	LoadConfig()
 	InitLogger()
+	SetupFirestore()
 
 	s := grpc.NewServer()
 	RegisterGrpc(s)
